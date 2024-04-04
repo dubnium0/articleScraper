@@ -52,17 +52,17 @@ class ArticleScraper:
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument("-f", "--aranan_kelime", help="Aranan makale konusu", required=True)
-    parser.add_argument("-n", "--sayi", help="Kaç sayfa makale indirilsin", type=int, default=2)
+    parser.add_argument("-s", "--search_term", help="search article subject", required=True)
+    parser.add_argument("-n", "--page_number", help="search page number", type=int, default=2)
     args = parser.parse_args()
-    aranan_kelime = args.aranan_kelime
-    sayi = args.sayi
+    search_term = args.aranan_kelime
+    page_num = args.sayi
 
-    print(aranan_kelime)
+    print(search_term)
 
     path = "https://dergipark.org.tr/tr/search/"
-    scraper = ArticleScraper(path, aranan_kelime)
-    scraper.search_articles(sayi)
+    scraper = ArticleScraper(path, search_term)
+    scraper.search_articles(page_num)
     scraper.get_download_links()
-    path = os.path.join(os.getcwd(),aranan_kelime)
+    path = os.path.join(os.getcwd(),search_term)
     scraper.download_articles(path)
