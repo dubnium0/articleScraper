@@ -1,4 +1,4 @@
-### article scraper on dergi.com
+### Article scraper on dergi.com
 ### Installation 
 
 1. clone the repository <pre><code>git clone https://github.com/dubnium0/articleScraper.git</code></pre>
