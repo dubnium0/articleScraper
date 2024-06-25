@@ -55,8 +55,8 @@ if __name__ == "__main__":
     parser.add_argument("-s", "--search_term", help="search article subject", required=True)
     parser.add_argument("-n", "--page_number", help="search page number", type=int, default=2)
     args = parser.parse_args()
-    search_term = args.aranan_kelime
-    page_num = args.sayi
+    search_term = args.search_term
+    page_num = args.page_number
 
     print(search_term)
 
